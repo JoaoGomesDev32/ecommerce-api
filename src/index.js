@@ -1,4 +1,5 @@
 import express from 'express';
+import pool from './config/db.js';
 import dotenv from 'dotenv';
 
 // Importando o módulo dotenv para carregar variáveis de ambiente

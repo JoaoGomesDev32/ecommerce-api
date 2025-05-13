@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import productRoutes from './routes/productRoutes.js';
 
 dotenv.config();
 
@@ -12,8 +13,10 @@ app.use(express.json());
 // Rotas de usuários
 app.use('/users', userRoutes);
 
-const PORT = process.env.PORT || 3000;
+// Rotas de produtos
+app.use('/products', productRoutes);
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });

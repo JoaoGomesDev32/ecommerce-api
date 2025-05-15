@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
 
 dotenv.config();
 
@@ -15,6 +16,9 @@ app.use('/users', userRoutes);
 
 // Rotas de produtos
 app.use('/products', productRoutes);
+
+// Rota do carrinho
+app.use('/api', cartRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
